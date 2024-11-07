@@ -19,7 +19,7 @@ public class MessageController {
         this.kafkaProducer = kafkaProducer;
     }
 
-    //http:loclhost:8088/api/v1/kafka/publish?message=hello world
+    //http:localhost:8088/api/v1/kafka/publish?message=hello world
     @GetMapping("/publish")
     public ResponseEntity<String> publish(@RequestParam("message") String message) {
         kafkaProducer.sendMessage(message);
