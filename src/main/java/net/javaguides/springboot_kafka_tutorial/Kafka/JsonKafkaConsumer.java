@@ -12,6 +12,6 @@ public class JsonKafkaConsumer {
 
     @KafkaListener(topics = "javaguidesJson", groupId = "consumerGroup")
     public void consume(User user) {
-
+        LOGGER.info(String.format("Json message recieved -> %s", user.toString()));
     }
 }
